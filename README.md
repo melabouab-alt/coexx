@@ -1,12 +1,12 @@
 # Random Signals and Noise
 
-An English academic course covering probability, random processes, noise, and communication applications. The browser edition includes 15 lessons, 44 worked exercises at the end of their relevant lessons, and 23 figures.
+An English course covering probability, random processes, noise, and communication applications. Concise explanations lead into equations, diagrams, and worked problems at the end of each relevant topic.
 
-`index.html` contains the complete course, its fonts, figures, and native mathematical notation. It has responsive layouts for desktop and mobile, course navigation, larger text, and printing controls. No installation or build step is required.
+`index.html` contains the complete course, including its fonts, diagrams, and mathematical notation. It supports desktop and mobile reading, topic navigation, larger text, and printing. Questions appear in larger blue text; solutions use black text. Topics, examples, problems, and printed pages have no numbering.
 
 The finished printable and editable editions are also included:
 
-- [PDF edition](Communication_Course.pdf): 117-page academic course.
+- [PDF edition](Communication_Course.pdf): printable course.
 - [Word edition](Communication_Course.docx): editable Word edition.
 
 ## GitHub Pages
