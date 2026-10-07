@@ -9,6 +9,14 @@ The finished printable and editable editions are also included:
 - [PDF edition](Communication_Course.pdf): printable course.
 - [Word edition](Communication_Course.docx): editable Word edition.
 
+## Gaussian Study Guide
+
+A separate focused guide explains the Gaussian distribution and Q function, binary PAM errors, the central limit theorem, variable transformations and point masses, and related Gaussian signal applications. Relevant worked problems follow their topics, with the same fonts, diagrams, and question/solution formatting.
+
+- [Read the Gaussian guide](gaussian.html).
+- [Gaussian PDF](Gaussian_Study_Guide.pdf).
+- [Gaussian Word edition](Gaussian_Study_Guide.docx).
+
 ## GitHub Pages
 
 After this version has been published to the repository, open **Settings → Pages**, choose **Deploy from a branch**, and select **main** with **/ (root)**. Save the configuration.
