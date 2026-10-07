@@ -1,6 +1,6 @@
 # Random Signals and Noise
 
-An English course covering probability, random processes, noise, and communication applications. Concise explanations lead into equations, diagrams, and worked problems at the end of each relevant topic.
+An English course covering probability, random processes, noise, and communication applications. Brief practical explanations connect the concepts to received waveforms, measurements, and receiver decisions. Equations, diagrams, and worked problems develop each idea; problems appear at the end of their relevant topics.
 
 `index.html` contains the complete course, including its fonts, diagrams, and mathematical notation. It supports desktop and mobile reading, topic navigation, larger text, and printing. Questions appear in larger blue text; solutions use black text. Topics, examples, problems, and printed pages have no numbering.
 
