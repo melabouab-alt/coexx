@@ -16,6 +16,14 @@ The requested visual styling uses a dark royal blue title and headings, a pale b
 
 The ZIP includes the paper, MATLAB code, editable LaTeX source, vector and PNG figures, the Python reproduction program, and numerical data and validation files.
 
+
+## دليل فهم ومناقشة البحث بالعربية
+
+- [تحميل دليل الشرح بالعربية (PDF)](https://github.com/melabouab-alt/coexx/raw/refs/heads/main/Fractional_RLC/Fractional_RLC_Arabic_Explanation.pdf)
+- [تحميل النسخة القابلة للتعديل (Word)](https://github.com/melabouab-alt/coexx/raw/refs/heads/main/Fractional_RLC/Fractional_RLC_Arabic_Explanation.docx)
+
+دليل مستقل من 33 صفحة يشرح الأساسيات والملخص جملةً جملة، وكل المعادلات الـ29، والرسوم الخمسة والجداول الثلاثة، وكود MATLAB. يتضمن 32 سؤالاً للمناقشة، وعرضاً قصيراً بالعربية والإنجليزية، وخطة مراجعة وتمارين بإجاباتها. أرقام المعادلات والأشكال والجداول تشير إلى الورقة الأصلية ذات الصفحات الست. ابدئي بالأساسيات، ثم الرسوم والنتائج، وبعدها المعادلات والكود والأسئلة.
+
 ## What the paper studies
 
 A dimensionally consistent series RLC model with Caputo derivative orders 0.8, 0.9, and 1.0. It compares step voltage, current, frequency response, overshoot, and both 2% and 1% settling tolerances. The ordinary RLC case is recovered at order 1.
