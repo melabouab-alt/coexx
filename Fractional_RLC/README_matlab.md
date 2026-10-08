@@ -1,5 +1,8 @@
 # MATLAB reproduction
 
+Author: **Fatema Alzahraa Ahmed Elshareef**  
+Department of Electrical Engineering, University of Tripoli
+
 Place `rlc_fractional_study.m` in the MATLAB current folder and run:
 
 ```matlab

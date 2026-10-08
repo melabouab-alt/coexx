@@ -1,4 +1,6 @@
 function results = rlc_fractional_study(doPlots, outputDirectory)
+% Author: Fatema Alzahraa Ahmed Elshareef
+% Department of Electrical Engineering, University of Tripoli
 %RLC_FRACTIONAL_STUDY Reproduce the ideal fractional RLC numerical study.
 %   RESULTS = RLC_FRACTIONAL_STUDY runs the complete study and saves figures
 %   and CSV files in ./matlab_results. No optional MATLAB toolbox is needed.
@@ -52,7 +54,8 @@ V0 = 1;                % volt
 rho = 1;               % R/Z0
 A = [0, 1; -1, -rho];
 b = [0; 1];
-colors = [0.00, 0.32, 0.62; 0.82, 0.29, 0.10; 0.20, 0.50, 0.26];
+colors = [0, 63, 135; 0, 98, 155; 101, 153, 204]/255;
+styles = {'-', '--', ':'};
 labels = {'alpha = 0.8', 'alpha = 0.9', 'alpha = 1.0'};
 
 results = struct;
@@ -167,7 +170,7 @@ writeNumericCSV(fullfile(outputDirectory, 'laplace_validation.csv'), ...
 save(fullfile(outputDirectory, 'results.mat'), 'results');
 
 if doPlots
-    makeFigures(results, colors, labels);
+    makeFigures(results, colors, styles, labels);
 end
 fprintf('Results saved in %s\n', outputDirectory);
 end
@@ -282,7 +285,7 @@ for k = 1:size(rows,1)
 end
 end
 
-function makeFigures(results, colors, labels)
+function makeFigures(results, colors, styles, labels)
 fine = results.fine;
 out = results.outputDirectory;
 V0 = results.parameters.V0_V;
@@ -290,7 +293,8 @@ V0 = results.parameters.V0_V;
 fig = figure('Color', 'w', 'Name', 'Fractional RLC transient');
 subplot(2,1,1); hold on;
 for ia = 1:numel(fine)
-    plot(1e3*fine{ia}.t_s, fine{ia}.vC_V, 'Color', colors(ia,:), 'LineWidth', 1.4);
+    plot(1e3*fine{ia}.t_s, fine{ia}.vC_V, 'Color', colors(ia,:), ...
+        'LineStyle', styles{ia}, 'LineWidth', 1.4);
 end
 plot([0,12], [V0,V0], 'k:', 'HandleVisibility', 'off');
 xlim([0,12]); grid on;
@@ -298,7 +302,8 @@ ylabel('Capacitor voltage v_C (V)');
 legend(labels, 'Location', 'southeast');
 subplot(2,1,2); hold on;
 for ia = 1:numel(fine)
-    plot(1e3*fine{ia}.t_s, 1e3*fine{ia}.i_A, 'Color', colors(ia,:), 'LineWidth', 1.4);
+    plot(1e3*fine{ia}.t_s, 1e3*fine{ia}.i_A, 'Color', colors(ia,:), ...
+        'LineStyle', styles{ia}, 'LineWidth', 1.4);
 end
 xlim([0,12]); grid on;
 xlabel('Time t (ms)'); ylabel('Series current i (mA)');
@@ -307,7 +312,7 @@ saveFigure(fig, out, 'transient');
 fig = figure('Color', 'w', 'Name', 'Fractional RLC tail'); hold on;
 for ia = 1:numel(fine)
     plot(1e3*fine{ia}.t_s, 100*(fine{ia}.z(1,:)-1), ...
-        'Color', colors(ia,:), 'LineWidth', 1.4);
+        'Color', colors(ia,:), 'LineStyle', styles{ia}, 'LineWidth', 1.4);
 end
 for tolerance = [-2,-1,1,2]
     plot([5,60], [tolerance,tolerance], 'k:', 'HandleVisibility', 'off');
@@ -322,14 +327,14 @@ fig = figure('Color', 'w', 'Name', 'Fractional RLC frequency response');
 subplot(2,1,1); hold on;
 for ia = 1:numel(fine)
     semilogx(fHz, results.frequency.magnitude_dB(ia,:), ...
-        'Color', colors(ia,:), 'LineWidth', 1.4);
+        'Color', colors(ia,:), 'LineStyle', styles{ia}, 'LineWidth', 1.4);
 end
 set(gca, 'XScale', 'log'); grid on;
 ylabel('Voltage gain |H| (dB)'); legend(labels, 'Location', 'southwest');
 subplot(2,1,2); hold on;
 for ia = 1:numel(fine)
     semilogx(fHz, results.frequency.phase_deg(ia,:), ...
-        'Color', colors(ia,:), 'LineWidth', 1.4);
+        'Color', colors(ia,:), 'LineStyle', styles{ia}, 'LineWidth', 1.4);
 end
 set(gca, 'XScale', 'log'); grid on;
 xlabel('Frequency f (Hz)'); ylabel('Phase (degree)');
@@ -346,8 +351,9 @@ for ia = 1:numel(fine)
         plotH = rows(select,2);
         plotError = rows(select,3);
     end
-    loglog(plotH, plotError, '-o', ...
-        'Color', colors(ia,:), 'LineWidth', 1.4, 'MarkerSize', 6);
+    loglog(plotH, plotError, 'o', ...
+        'Color', colors(ia,:), 'LineStyle', styles{ia}, ...
+        'LineWidth', 1.4, 'MarkerSize', 6);
 end
 h = results.parameters.h;
 guide = rows(1,3)*(h/h(1));

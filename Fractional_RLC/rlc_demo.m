@@ -1,5 +1,9 @@
-clear; clc;
-aSet = [0.8 0.9 1.0];
+% Author: Fatema Alzahraa Ahmed Elshareef
+% Department of Electrical Engineering,
+% University of Tripoli
+clear; clc; aSet = [0.8 0.9 1.0];
+colors = [0 63 135; 0 98 155; 101 153 204]/255;
+styles = {'-','--',':'};
 tau = 1e-3; V0 = 1; Z0 = 10;
 h = 0.0025; U = 60;
 A = [0 1; -1 -1]; b = [0;1];
@@ -19,22 +23,26 @@ for k = 1:3
     end
     X(k,:) = z(1,:); Y(k,:) = z(2,:);
 end
-tms = 1e3*tau*u;
-subplot(2,1,1);
-plot(tms,V0*X,'LineWidth',1.2);
+tms = 1e3*tau*u; subplot(2,1,1);
+hs = plot(tms,V0*X,'LineWidth',1.2);
+set(hs,{'Color','LineStyle'}, ...
+    [num2cell(colors,2),styles.']);
 xlim([0 12]); grid on;
 ylabel('Capacitor voltage (V)');
 legend('a=0.8','a=0.9','a=1.0');
 subplot(2,1,2);
-plot(tms,1e3*V0/Z0*Y,'LineWidth',1.2);
+hs = plot(tms,1e3*V0/Z0*Y,'LineWidth',1.2);
+set(hs,{'Color','LineStyle'}, ...
+    [num2cell(colors,2),styles.']);
 xlim([0 12]); grid on;
 xlabel('Time (ms)'); ylabel('Current (mA)');
-f = logspace(0,4,1200);
-figure; hold on;
-for a = aSet
+f = logspace(0,4,1200); figure; hold on;
+for k = 1:3
+    a = aSet(k);
     p = (1i*2*pi*f*tau).^a;
     H = 1./(p.^2+p+1);
-    semilogx(f,20*log10(abs(H)));
+    semilogx(f,20*log10(abs(H)), ...
+        'Color',colors(k,:),'LineStyle',styles{k});
 end
 set(gca,'XScale','log'); grid on;
 xlabel('Frequency (Hz)'); ylabel('Gain (dB)');

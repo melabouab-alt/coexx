@@ -1,6 +1,11 @@
 # Fractional RLC Circuit Research
 
+**Author:** Fatema Alzahraa Ahmed Elshareef  
+**Affiliation:** Department of Electrical Engineering, University of Tripoli
+
 **English paper · 6 pages · IEEE two-column format · exactly 100 abstract words · 5 references**
+
+The requested visual styling uses a dark royal blue title and headings, a pale blue framed abstract, and coordinated blue tables and curves. The author details also appear at the top of the MATLAB code.
 
 ## Download / التنزيل
 
@@ -31,4 +36,4 @@ The published calculations were executed in Python and independently checked aga
 
 ## Editable source
 
-Extract the ZIP and open `rlc_paper/source/paper.tex`. Add the student's actual name and affiliation if required. Compile with `pdflatex` twice. The supplied figures permit compilation without rerunning the numerical study.
+Extract the ZIP and open `rlc_paper/source/paper.tex`. The author and affiliation are already included. Compile with `pdflatex` twice. The supplied figures permit compilation without rerunning the numerical study.
