@@ -2,6 +2,8 @@
 
 An English course covering probability, random processes, noise, and communication applications. Brief practical explanations connect the concepts to received waveforms, measurements, and receiver decisions. Equations, diagrams, and worked problems develop each idea; problems appear at the end of their relevant topics.
 
+The course includes 94 worked problems and 21 lesson examples. Additional practice covers probability laws, Gaussian tails, variable transformations, conditional distributions, stationarity, correlation, spectra, linear filtering, and narrowband noise. Seven additional diagrams explain selected solutions.
+
 `index.html` contains the complete course, including its fonts, diagrams, and mathematical notation. It supports desktop and mobile reading, topic navigation, larger text, and printing. Questions appear in larger blue text; solutions use black text. Topics, examples, problems, and printed pages have no numbering.
 
 The finished printable and editable editions are also included:
